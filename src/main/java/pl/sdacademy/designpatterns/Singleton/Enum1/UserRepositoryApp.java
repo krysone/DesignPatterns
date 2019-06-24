@@ -1,7 +1,13 @@
 package pl.sdacademy.designpatterns.Singleton.Enum1;
 
-public class Main {
+import java.util.HashMap;
+import java.util.Map;
+
+public class UserRepositoryApp {
     public static void main(String[] args) {
+
+        UserRepositoryEnum userRepository = UserRepositoryEnum.INSTANCE;
+
         FBRegistrationService fbRegistrationService = new FBRegistrationService();
         GoogleRegistrationService googleRegistrationService = new GoogleRegistrationService();
 
@@ -13,6 +19,6 @@ public class Main {
         googleRegistrationService.register("Joe", "wcdcsknodsferedwe@gmail.com");
         googleRegistrationService.register("Rachel", "wcdscukmksferedwe@gmail.com");
 
-//        System.out.println(userRep);
-     }
+        userRepository.getUsernamesToEmails().forEach((k,v)-> System.out.println(k+ " \t" +v));
+    }
 }

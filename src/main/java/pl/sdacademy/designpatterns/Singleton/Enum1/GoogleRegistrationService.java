@@ -2,11 +2,11 @@ package pl.sdacademy.designpatterns.Singleton.Enum1;
 
 public class GoogleRegistrationService implements RegistrationService {
 
-    UserRepository userRepositoryGoo;
+    UserRepositoryEnum userRepositoryAppGoo = UserRepositoryEnum.INSTANCE;
 
     @Override
     public void register(final String username, final String email) {
-        userRepositoryGoo.addUser(username, email);
+        userRepositoryAppGoo.addUser(username, email);
     }
 
 }
